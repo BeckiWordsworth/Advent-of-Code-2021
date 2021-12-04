@@ -28,3 +28,24 @@ const depth = inputArray.reduce((acc, curr) => {
 }, 0);
 
 console.log("part 1: ", horizontalPosition * depth);
+
+let depthPart2 = 0;
+let horizontalPositionPart2 = 0;
+let aimPart2 = 0;
+
+for (const row of inputArray) {
+  switch (row.direction) {
+    case "forward":
+      horizontalPositionPart2 += row.units;
+      depthPart2 += aimPart2 * row.units;
+      break;
+    case "up":
+      aimPart2 -= row.units;
+      break;
+    case "down":
+      aimPart2 += row.units;
+      break;
+  }
+}
+
+console.log("part 2: ", depthPart2 * horizontalPositionPart2);
