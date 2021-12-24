@@ -57,7 +57,7 @@ const getWinningBoard = () => {
   throw new Error("No winner");
 };
 
-const getLastWinningBoard = () => {
+const getFinalWinningBoard = () => {
   for (let i = 0; i < numbers.length; i++) {
     const calledNumber = numbers[i];
     for (let k = 0; k < boardsWithStats.length; ) {
@@ -89,4 +89,4 @@ const calculateScore = boardGetter => {
 };
 
 console.log("part 1", calculateScore(getWinningBoard));
-console.log("part 2", calculateScore(getLastWinningBoard));
+console.log("part 2", calculateScore(getFinalWinningBoard));
